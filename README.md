@@ -9,7 +9,7 @@
 Bu projenin amacı, akıllı atık konteynerlerinden alınan sensör verilerini kullanarak konteynerlerin normal dolan mı yoksa hızlı dolan mı olduğunu tahmin eden bir makine öğrenmesi modeli geliştirmektir.
 
 Çalışma boyunca konteyner türü, atık türü ve hacim sensörlerinden gelen veriler incelenmiş, bu veriler yardımıyla konteynerlerin dolma davranışları analiz edilmiştir. Amaç, hızlı dolma riski olan konteynerleri önceden tespit ederek daha verimli bir atık toplama süreci sağlamaktır.
-# Target (Hedef Değişken)
+# Hedef değişken
 
 Projede hedef değişken olarak Hizli_Dolma kullanılmıştır. Bu değişken, konteynerin doluluk sensörlerinden elde edilen ölçümler yardımıyla oluşturulmuştur.
 
@@ -28,7 +28,7 @@ Medyanın üzerinde kalan değerler 1 (hızlı dolma) olarak etiketlenmiştir.
 # Veri Seti 
 df = pd.read_csv("Smart_Bin.csv")
 Veri seti Smart_Bin.csv dosyasından okunmuştur. İlk olarak veri setinin genel yapısı incelenmiş, sütun bilgileri ve veri tipleri kontrol edilmiştir. Eksik veriler analiz edilmiş ve eksik veri sayısının az olması nedeniyle bu satırlar veri setinden çıkarılmıştır..
-# Feature Engineering (Doluluk Artışı)
+# Feature Engineerining
 
 Konteynerlerin dolma hızını daha doğru temsil edebilmek için aşağıdaki özellik oluşturuldu:
 
@@ -36,7 +36,7 @@ df["Doluluk_Artisi"] = df["FL_B"] - df["FL_A"]
 
 
 Bu değişken, konteynerin iki ölçüm arasındaki gerçek dolma hızını ifade etmektedir.
-# Pivot Tablolama (Davranış Analizi)
+# Pivot Tablolama 
 
 <img width="601" height="509" alt="image" src="https://github.com/user-attachments/assets/b1cd11d6-c8a9-4c8b-9aaa-ef86c499be5b" />
 
@@ -100,11 +100,11 @@ KNN modeliyle yaklaşık %81 doğruluk elde ettim. Ancak model, verideki mantık
 
 Her iki model de konteyner doluluk durumunu tahmin etmede başarılı sonuçlar üretmiştir. Ancak:
 
-Random Forest, karmaşık veri yapısını daha iyi öğrenmesi ve yorumlanabilirlik (feature importance) sunması nedeniyle daha başarılı bulunmuştur.
+Random Forest, karmaşık veri yapısını daha iyi öğrenmesi ve yorumlanabilirlik sunması nedeniyle daha başarılı olarak buldum .
 
-KNN, basit ve sezgisel bir yaklaşım sunmasına rağmen, büyük veri setlerinde ve karmaşık ilişkilerde performans açısından sınırlı kalmıştır.
+KNN, basit ve sezgisel bir yaklaşım sunmasına rağmen, büyük veri setlerinde ve karmaşık ilişkilerde performans açısından sınırlı kaldı .
 
-Bu nedenle proje kapsamında Random Forest modeli uygun model olarak tercih edilmiştir.
+Bu nedenle proje kapsamında Random Forest modeli uygun model olarak tercih ettim.
 
 
 
