@@ -6,41 +6,28 @@
 
 # Projenin Amacı
 
-Bu projenin amacı, akıllı atık konteynerlerinden elde edilen sensör verileri kullanılarak konteynerlerin doluluk durumunun normal mi yoksa hızlı dolan bir durumda mı olduğunu tahmin eden bir makine öğrenmesi modeli geliştirmektir.
+Bu projenin amacı, akıllı atık konteynerlerinden alınan sensör verilerini kullanarak konteynerlerin normal dolan mı yoksa hızlı dolan mı olduğunu tahmin eden bir makine öğrenmesi modeli geliştirmektir.
 
-Çalışma kapsamında konteyner türü, atık türü ve hacim sensörü verileri analiz edilerek, doluluk davranışları incelenmiş ve hızlı dolma riski taşıyan durumların önceden tespit edilmesi hedeflenmiştir.
-
+Çalışma boyunca konteyner türü, atık türü ve hacim sensörlerinden gelen veriler incelenmiş, bu veriler yardımıyla konteynerlerin dolma davranışları analiz edilmiştir. Amaç, hızlı dolma riski olan konteynerleri önceden tespit ederek daha verimli bir atık toplama süreci sağlamaktır.
 # Target (Hedef Değişken)
 
-Hedef değişken Hizli_Dolma, konteyner doluluk seviyesini temsil eden sensör ölçümleri üzerinden oluşturulmuştur.
+Projede hedef değişken olarak Hizli_Dolma kullanılmıştır. Bu değişken, konteynerin doluluk sensörlerinden elde edilen ölçümler yardımıyla oluşturulmuştur.
 
 FL_A ve FL_B sensör değerleri arasındaki fark alınarak doluluk artışı hesaplanmıştır.
 
-Doluluk artışının medyan değeri referans alınmıştır.
+Hesaplanan doluluk artışlarının medyan değeri referans alınmıştır.
 
-Medyanın:
+Medyanın altında kalan değerler 0 (normal dolma),
 
-altında kalan değerler 0 (normal dolma)
-
-üzerinde kalan değerler 1 (hızlı dolma)
-olarak etiketlenmiştir.
-
-Bu sayede problem ikili sınıflandırma (binary classification) problemine dönüştürülmüştür.
-Neler Yapıldı?
+Medyanın üzerinde kalan değerler 1 (hızlı dolma) olarak etiketlenmiştir.
+# Neler Yapıldı?
  Gerekli Kütüphaneler Eklendi
    
 <img width="786" height="272" alt="image" src="https://github.com/user-attachments/assets/6435d1a9-cfa5-4c5e-81e6-42099ca61297" />
 
 # Veri Seti 
 df = pd.read_csv("Smart_Bin.csv")
-df.head()
-df.info()
-
-Veri seti genel yapısı incelendi.
-
-Eksik veriler kontrol edildi.
-
-Eksik verilerin az olması nedeniyle ilgili satırlar veri setinden çıkarıldı.
+Veri seti Smart_Bin.csv dosyasından okunmuştur. İlk olarak veri setinin genel yapısı incelenmiş, sütun bilgileri ve veri tipleri kontrol edilmiştir. Eksik veriler analiz edilmiş ve eksik veri sayısının az olması nedeniyle bu satırlar veri setinden çıkarılmıştır..
 # Feature Engineering (Doluluk Artışı)
 
 Konteynerlerin dolma hızını daha doğru temsil edebilmek için aşağıdaki özellik oluşturuldu:
@@ -51,13 +38,13 @@ df["Doluluk_Artisi"] = df["FL_B"] - df["FL_A"]
 Bu değişken, konteynerin iki ölçüm arasındaki gerçek dolma hızını ifade etmektedir.
 # Pivot Tablolama (Davranış Analizi)
 
-Zamansal veya kategorik bilgileri doğrudan kullanmak yerine, bu bilgilerin doluluk üzerindeki etkisini yansıtan pivot tablolar oluşturulmuştur.
-
-
 <img width="601" height="509" alt="image" src="https://github.com/user-attachments/assets/b1cd11d6-c8a9-4c8b-9aaa-ef86c499be5b" />
 
+Konteyner türü ve atık türüne göre doluluk davranışlarını daha iyi anlayabilmek için pivot tablolar oluşturulmuştur. Bu tablolar sayesinde hangi konteyner türünün hangi atık türünde daha hızlı dolduğu açık bir şekilde görülmüştür.
 
-Bu kodlar hangi konteyner türünün hangi atık türünde daha yüksek doluluk seviyelerine ulaştığını göstermektedir ve hangi konteyner ve atık türü kombinasyonunun daha hızlı dolduğunu ortaya koymaktadır.
+Bu analizler, veri setindeki genel eğilimleri anlamak açısından önemli katkı sağlamıştır.
+
+
 
 # Görselleştirme
 
