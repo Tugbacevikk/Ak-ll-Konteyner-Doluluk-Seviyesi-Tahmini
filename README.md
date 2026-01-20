@@ -2,7 +2,7 @@
 <img width="968" height="658" alt="Ekran görüntüsü 2026-01-20 132009" src="https://github.com/user-attachments/assets/ce61ca35-b469-4b43-9610-d12c32a03067" />
 
 
-# Akilli-Konteyner-Doluluk-Seviyesi-Tahmini
+# Akilli Konteyner doluluk Seviyesi tahmini
 
 # Projenin Amacı
 
