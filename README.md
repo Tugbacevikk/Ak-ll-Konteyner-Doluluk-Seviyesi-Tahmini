@@ -81,7 +81,6 @@ X = df[["C_Encoded", "W_Encoded", "VS"]]
 y = df["Hizli_Dolma"]
 
 
-Veri seti %80 eğitim, %20 test olacak şekilde ayrılmıştır.
 
 # Random Forest Modeli
 
