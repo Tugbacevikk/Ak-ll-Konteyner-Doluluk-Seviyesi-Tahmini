@@ -1,4 +1,4 @@
-# Akıll-Konteyner-Doluluk-Seviyesi-Tahmini
+# Akilli-Konteyner-Doluluk-Seviyesi-Tahmini
 
 # Projenin Amacı
 
@@ -27,7 +27,7 @@ Neler Yapıldı?
    
 <img width="786" height="272" alt="image" src="https://github.com/user-attachments/assets/6435d1a9-cfa5-4c5e-81e6-42099ca61297" />
 
-# Veri Seti Alındı ve İncelendi
+# Veri Seti 
 df = pd.read_csv("Smart_Bin.csv")
 df.head()
 df.info()
