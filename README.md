@@ -1,3 +1,7 @@
+<img width="1089" height="768" alt="image" src="https://github.com/user-attachments/assets/cbfddfd9-21ab-40cc-9b4c-e5064df65bc9" />
+<img width="968" height="658" alt="Ekran görüntüsü 2026-01-20 132009" src="https://github.com/user-attachments/assets/ce61ca35-b469-4b43-9610-d12c32a03067" />
+
+
 # Akilli-Konteyner-Doluluk-Seviyesi-Tahmini
 
 # Projenin Amacı
